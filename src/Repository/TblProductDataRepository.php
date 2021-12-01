@@ -22,7 +22,7 @@ class TblProductDataRepository extends ServiceEntityRepository
     // /**
     //  * @return TblProductData[] Returns an array of TblProductData objects
     //  */
-    /*
+
     public function findByExampleField($value)
     {
         return $this->createQueryBuilder('t')
@@ -34,7 +34,7 @@ class TblProductDataRepository extends ServiceEntityRepository
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?TblProductData
@@ -47,4 +47,20 @@ class TblProductDataRepository extends ServiceEntityRepository
         ;
     }
     */
+
+    //TODO: Temporarily left here
+    public function addProduct(array $data)
+    {
+        $productDataTable = new TblProductData();
+        $productDataTable->setStrProductName($data['strProductName']);
+        $productDataTable->setStrProductDesc($data['strProductDesc']);
+        $productDataTable->setStrProductCode($data['strProductCode']);
+        $productDataTable->setDtmAdded(date('%Y-%m-%d', time()));
+        $productDataTable->setDtmDiscontinued($data['discontinuedTime']);
+        $productDataTable->setIntStock($data['intStock']);
+        $productDataTable->setFloatPrice($data['floatPrice']);
+        $productDataTable->setStmTimestamp(time());
+
+
+    }
 }

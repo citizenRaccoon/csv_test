@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Common\File;
+namespace App\Services\File;
 
 abstract class File
 {
